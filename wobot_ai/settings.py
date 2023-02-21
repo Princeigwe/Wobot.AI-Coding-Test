@@ -158,7 +158,9 @@ REST_FRAMEWORK = {
     ]
 }
 
-
+# Djoser configuration
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
+    'SEND_ACTIVATION_EMAIL': False, # djoser should not send activation email
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True # djaser should send password confirmation email
 }
