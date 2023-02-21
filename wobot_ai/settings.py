@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -158,9 +159,16 @@ REST_FRAMEWORK = {
     ]
 }
 
-# Djoser configuration
+# rest simple jwt configuration
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT',),
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1), # setting access token expiration time
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
+}
+
+
+#DJOSER configurations
+DJOSER = {
     'SEND_ACTIVATION_EMAIL': False, # djoser should not send activation email
-    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True # djaser should send password confirmation email
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True, # djaser should send password confirmation email
 }
