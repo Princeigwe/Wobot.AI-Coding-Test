@@ -43,8 +43,12 @@ INSTALLED_APPS = [
     'rest_framework',
 
     #local apps
+    'account.apps.AccountConfig',
     'todo.apps.TodoConfig',
 ]
+
+AUTH_USER_MODEL = "account.CustomUser"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'wobot_ai.wsgi.application'
+
 
 
 # Database
